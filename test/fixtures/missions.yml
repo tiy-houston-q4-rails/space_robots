@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  song: MyString
+  dance: MyString
+  location: MyString
+  robot_id: 
+  completed: false
+
+two:
+  song: MyString
+  dance: MyString
+  location: MyString
+  robot_id: 
+  completed: false

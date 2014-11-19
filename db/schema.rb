@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119160018) do
+ActiveRecord::Schema.define(version: 20141119160710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "missions", force: true do |t|
+    t.string   "song"
+    t.string   "dance"
+    t.string   "location"
+    t.integer  "robot_id"
+    t.boolean  "completed",  default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "missions", ["robot_id"], name: "index_missions_on_robot_id", using: :btree
 
   create_table "robots", force: true do |t|
     t.string   "name"
