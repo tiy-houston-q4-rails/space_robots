@@ -81,3 +81,64 @@ Sample json:
 ```
 {"ok":true}
 ```
+
+
+#### Missions
+
+GET /missions
+
+##### `/missions`
+
+```
+GET /missions
+GET /missions/:id
+POST /missions
+PUT /missions/:id
+DELETE /missions/:id
+```
+
+```
+{
+    "missions": [
+        {
+            "id": 1,
+            "song": "Intergallactic",
+            "dance": "robot",
+            "location": "mars",
+            "completed": true,
+            "robot_id": 1
+        },
+        {
+            "id": 2,
+            "song": "mr. roboto",
+            "dance": "kill-all-humans",
+            "location": "robot-planet",
+            "completed": false,
+            "robot_id": 1
+        }
+    ]
+}
+```
+
+GET /missions/1
+```
+{"mission":{"id":2,"song":"mr. roboto","dance":"kill-all-humans","location":"robot-planet","completed":false,"robot_id":1}}
+```
+
+POST /missions
+```
+{"mission":{"song":"mr. roboto","dance":"kill-all-humans","location":"robot-planet","completed":false,"robot_id":1}}
+```
+
+PUT /missions/:id
+
+```
+{"mission":{"song":"mr. roboto","dance":"kill-all-humans","location":"robot-planet","completed":false,"robot_id":5}}
+```
+
+DELETE /missions/:id
+
+Sample json:
+```
+{"ok":true}
+```
