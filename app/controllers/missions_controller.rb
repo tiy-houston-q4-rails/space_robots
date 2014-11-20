@@ -12,8 +12,11 @@ class MissionsController < ApplicationController
 
   def create
     @mission = Mission.new(params.require(:mission).permit(:song, :dance, :location, :completed, :robot_id))
-    @mission.save
-    render json: @mission
+    if @mission.save
+      render json: @mission
+    else
+      render json: {errors: @mission.errors}, status: 422
+    end
   end
 
   def update
