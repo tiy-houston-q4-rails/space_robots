@@ -1,7 +1,7 @@
 class RobotsController < ApplicationController
 
   def index
-    @robots = Robot.all
+    @robots = Robot.all.includes(:missions)
     render json: @robots
   end
 
